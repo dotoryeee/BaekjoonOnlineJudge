@@ -1,13 +1,10 @@
-alpha_list = []  #[A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z]
-for i in range(0, 26):
-    alpha_list.append(97+i)
-
-origin = input()
-
-word = []
-for char in origin:
-    word.append(ord(char))
-
+import sys
+answer = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1]
+word = sys.stdin.readline().rstrip()
 cursor = 0
-for i in char:
-    if
+for char in word:
+    if answer[ord(char)-97] == -1:
+        answer[ord(char)-97] = cursor
+    cursor += 1
+for num in answer:
+    print(num, end=' ')
